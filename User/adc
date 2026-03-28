@@ -1,0 +1,7 @@
+
+
+
+// Установка канала
+void ADC_SelectChannel(uint8_t channel) {
+    ADC_RegularChannelConfig(ADC1, channel, 1, ADC_SampleTime_241Cycles);
+}
