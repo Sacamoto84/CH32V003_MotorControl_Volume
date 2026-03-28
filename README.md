@@ -1,17 +1,25 @@
 ### Параметры настроек
 
-| Параметр       | Диапазон      | Шаг   | Ед.  |
-|----------------|---------------|-------|------|
-| Power          | 5 – 100       | 5     | %    |
-| Boost Enable   | Off / On      | —     | —    |
-| Boost Power    | 5 – 100       | 5     | %    |
-| Boost Time     | 50 – 1000     | 50    | мс   |
+Управление мощностью идет через потенциометр, который запитывается при установке PC3, который сбрасывается во сне.
+
+| Параметр       | Диапазон        | Шаг   | Ед.  |
+|----------------|-----------------|-------|------|
+| Power          | Не используется | 5     | %    |
+| Boost Enable   | Off / On        | —     | —    |
+| Boost Power    | 5 – 100         | 5     | %    |
+| Boost Time     | 50 – 1000       | 50    | мс   |
 
 Motor Power = Power + Boost Power
 
 ```cpp
-TX  [PD6   PD4] SWIO
-GNG [VSS   PC4] KEY
-PWM [PA2   PC2] LED
-VDD [VDD   PC1] BUZZER
+PD4 SWIO
+PD6 TX  
+
+PA2 PWM
+
+PC0 KEY
+PC1 BUZZER
+PC2 LED
+PC3 OUT Volume
+PC4 AIN2
 ```
